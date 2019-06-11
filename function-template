@@ -1,0 +1,11 @@
+# Function definition
+function <function-name> 
+  {
+     [CmdletBinding()]
+     param()
+  
+  <magic happens here>
+  
+  }
+
+$x = <function-name> <parameter passed to function>
