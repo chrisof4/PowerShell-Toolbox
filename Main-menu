@@ -1,0 +1,55 @@
+# Description: Presents user with menu and validates input
+function Main-menu
+    {
+    [CmdletBinding()]
+    param()
+    
+    Clear-Host
+    Write-Host "<menu title>`n"
+    Write-Host "1. <menu option 1>"
+    Write-Host "2. <menu option 2>"
+    Write-Host "3. <menu option 3>"
+    Write-Host "4. Exit."
+
+	try 
+		{
+			[ValidateRange(1,4)]$Choice = Read-Host "`nPlease type the number for your choice:"
+        }
+	catch
+		{
+			$x = Read-host "That is not a valid entry. Press any key to continue"
+		    continue
+		}
+	return $Choice
+
+  
+    }
+
+$v = $false
+do
+{
+$MenuChoice = Main-menu
+if (($MenuChoice -ge 1) -and ($MenuChoice -le 4))
+    {
+    Write-Host "$MenuChoice was chosen"
+    $v = $true
+    }
+}
+while ($v -eq $false)
+    if ($MenuChoice -eq 1)
+      {
+      # script or function for menu choice 1
+      }
+    elseif ($MenuChoice -eq 2)
+      {
+      # script or function for menu choice 1
+      }
+    elseif ($MenuChoice -eq 3) 
+      {
+      # script or function for menu choice 1
+      }
+    else 
+      {
+      Write-Host "Script terminated."
+      break
+      }
